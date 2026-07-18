@@ -216,3 +216,63 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ============================================================
+# Sketch2Furniture project files
+# ============================================================
+
+# Raw and processed datasets
+# Keep only placeholder files so Git preserves the folders.
+data/raw/*
+!data/raw/.gitkeep
+
+data/processed/*
+!data/processed/.gitkeep
+
+# Dataset archives
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+
+# PyTorch models and training checkpoints
+*.pt
+*.pth
+*.pth.tar
+*.ckpt
+*.onnx
+
+checkpoints/
+outputs/checkpoints/
+
+# Training logs and experiment trackers
+runs/
+logs/
+outputs/logs/
+wandb/
+lightning_logs/
+
+# Large generated training results
+outputs/generated/
+
+# Serialized Python objects and numerical arrays
+*.pkl
+*.pickle
+*.joblib
+*.npy
+*.npz
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Jupyter temporary files
+.ipynb_checkpoints/
+
+# IDE and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
