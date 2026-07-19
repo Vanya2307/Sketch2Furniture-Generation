@@ -1,12 +1,11 @@
 # Sketch2Furniture-Generation
-Deep learning generation of furniture images from paired edge sketches using a Pix2Pix conditional GAN.
-# Sketch2Furniture-Generation
+
 
 Deep learning generation of realistic furniture images from paired edge sketches using Pix2Pix.
 
 **Author:** Vanya Videva  
 **Course:** Deep Learning, SoftUni  
-**Date:** July-August 2026  
+**Date:** July-August 2026
 
 ---
 
