@@ -2,6 +2,12 @@ from pathlib import Path
 
 import pandas as pd
 
+import hashlib
+
+import imagehash
+
+from PIL import Image, UnidentifiedImageError
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DATASET_ROOT = PROJECT_ROOT / "data" / "raw" / "bonn_furniture_styles"
@@ -87,3 +93,55 @@ def load_dataset_splits():
         split_dataframes.append(parse_split_file(split_path, split_name))
 
     return pd.concat(split_dataframes, ignore_index=True)
+
+
+def inspect_image_file(relative_path, dataset_root=DATASET_ROOT):
+    """Validate one image and collect properties used in later analyses"""
+
+    relative_path = str(relative_path)
+    image_path = dataset_root / relative_path
+
+    result = {
+        "relative_path":relative_path,
+        "file_exists": image_path.is_file(),
+        "image_readable": False,
+        "width": None,
+        "hight": None,
+        "image_mode": None,
+        "image_format": None,
+        "file_size_bytes": None,
+        "sha256": None,
+        "perceptual_hash": None,
+        "inspection_error": None,
+    }
+
+    if not result["file_exists"]:
+        result["inspection_error"] = "File not found"
+        return result
+    
+    try:
+        result["file_size_bytes"] = image_path.stat().st_size
+
+        sha256_hash = hashlib.sha256()
+
+        with image_path.open("rb") as file:
+            for chunk in iter(lambda: file.read(1024 * 1024), b""):
+                sha256_hash.update(chunk)
+
+        result["sha256"] = sha256_hash.hexdigest()
+
+        with Image.open(image_path) as image:
+            image.load()
+
+            result["width"], result["height"] = image.size
+            result["image_mode"] = image.mode
+            result["image_format"] = image.format
+            result["perceptual_hash"] = str(imagehash.phash(image.convert("RGB")))
+
+        result["image_readable"] = True
+
+    except (OSError, ValueError, UnicodeDecodeError) as error:
+        result["inspection_error"] = str(error)
+    
+
+    return result
