@@ -106,7 +106,7 @@ def inspect_image_file(relative_path, dataset_root=DATASET_ROOT):
         "file_exists": image_path.is_file(),
         "image_readable": False,
         "width": None,
-        "hight": None,
+        "height": None,
         "image_mode": None,
         "image_format": None,
         "file_size_bytes": None,
