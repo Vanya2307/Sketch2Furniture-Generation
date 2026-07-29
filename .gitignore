@@ -276,3 +276,6 @@ outputs/generated/
 .idea/
 .DS_Store
 Thumbs.db
+
+
+*:Zone.Identifier

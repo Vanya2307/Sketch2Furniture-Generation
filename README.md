@@ -54,8 +54,8 @@ The notebooks should be executed in numerical order because later stages will us
 - [x] Local Python environment configured
 - [x] Dataset split parser implemented
 - [x] Original split records loaded
-- [ ] Complete data exploration and cleaning
-- [ ] Generate paired edge-photo data
+- [x] Complete data exploration and cleaning
+- [x] Generate paired edge-photo data
 - [ ] Train reconstruction-only U-Net
 - [ ] Train Pix2Pix
 - [ ] Evaluate and compare both models
