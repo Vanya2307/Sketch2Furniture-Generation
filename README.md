@@ -26,6 +26,8 @@ The initial scope focuses on the `beds` and `dressers` categories. These categor
 
 The work builds on the earlier [Furniture-Sketch-Classifier](https://github.com/Vanya2307/Furniture-Sketch-Classifier) project, which used Canny edge detection, HOG features, and classical machine learning for furniture classification. The earlier classifier will later be reused as an auxiliary evaluator of category preservation in generated images.
 
+
+
 ## Data Source
 
 The project uses the Bonn Furniture Styles Dataset introduced by Aggarwal et al. (2018).
@@ -47,6 +49,11 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 The notebooks should be executed in numerical order because later stages will use metadata and outputs created by earlier notebooks.
+
+### Notebook Preview
+
+GitHub may not render Notebook 04 because of its embedded outputs.  
+[View Notebook 04 on nbviewer](https://nbviewer.org/github/Vanya2307/Sketch2Furniture-Generation/blob/main/notebooks/04_pix2pix_training.ipynb)
 
 ## Current Progress
 
