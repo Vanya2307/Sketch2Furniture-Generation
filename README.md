@@ -184,9 +184,9 @@ Each file contains generator weights only, without discriminator or optimizer st
 
 | Release asset | Save to | Validation L1 |
 |---|---|---|
-| `unet_best_generator.pt` | `checkpoints/unet_baseline/best_generator.pt` | 0.2131 |
+| `unet_baseline_best_generator.pt` | `checkpoints/unet_baseline/best_generator.pt` | 0.2131 |
 | `pix2pix_generator_epoch_20.pt` | `checkpoints/pix2pix/checkpoint_epoch_20.pt` | 0.2494 |
-| `pix2pix_generator_epoch_48.pt` | `checkpoints/pix2pix/best_generator.pt` | 0.2395 |
+| `pix2pix_best_generator.pt` | `checkpoints/pix2pix/best_generator.pt` | 0.2395 |
 
 Destination paths are relative to the `Sketch2Furniture` folder in Google Drive. The file names differ between the release and the destinations because two of the checkpoints are named `best_generator.pt` within their own directories.
 
