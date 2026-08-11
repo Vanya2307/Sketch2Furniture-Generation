@@ -44,7 +44,7 @@ Each pair contains a 256 × 256 Canny edge map as the model input and the corres
 
 The original photographs and generated paired dataset are not included in this repository because of dataset usage restrictions and file size. Instructions for obtaining and preparing the data are provided in the Setup and Reproducibility section.
 
-See References for the full citation.
+See [References](#references) for the full citation.
 
 
 ## Repository Structure
